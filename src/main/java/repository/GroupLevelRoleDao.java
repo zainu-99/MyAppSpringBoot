@@ -8,12 +8,13 @@ package repository;
 import java.util.List;
 import model.User;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author as-sunnah
  */
+@Repository
 public interface GroupLevelRoleDao {
-    @Query("select * from user")
-    public List<User> getAll();
+    public List<User> findAll();
 }
