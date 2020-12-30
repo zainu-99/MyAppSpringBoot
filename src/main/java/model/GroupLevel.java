@@ -5,7 +5,7 @@
  */
 package model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,9 +22,9 @@ import javax.persistence.Table;
 public class GroupLevel {
      @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private int id;
-    private int group_id;
-    private int parent_id;
-    private Date created_at;
-    private Date updated_at;
+    private long id;
+    private long group_id;
+    private long parent_id;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
 }

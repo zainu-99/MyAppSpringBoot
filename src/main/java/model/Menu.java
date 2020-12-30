@@ -5,7 +5,7 @@
  */
 package model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,12 +22,12 @@ import javax.persistence.Table;
 public class Menu {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private int id;
-    private int role_id;
-    private int parent_id;
+    private long id;
+    private long role_id;
+    private long parent_id;
     private String menu_text;
     private String icon;
     private int sort;
-    private Date created_at;
-    private Date updated_at;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
 }

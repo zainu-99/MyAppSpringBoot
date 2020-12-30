@@ -6,24 +6,18 @@
 package controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import model.User;
+import repository.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
+    @Autowired
+    private UserDao dao;
     @GetMapping("/user")
-    public String index() {
-        return "home";
-    }
-    @GetMapping("/user")
-    public String store(User user) {
-        return "add";
-    }
-    @GetMapping("/user")
-    public String edit(int id,User user) {
-        return "edit";
-    }
-    @GetMapping("/user")
-    public String delete(int id) {
-        return "delete";
+    public ModelAndView index() {
+        ModelAndView mav = new ModelAndView("home");
+        mav.addObject("message", "Jaenudin");
+        return mav;
     }
 }

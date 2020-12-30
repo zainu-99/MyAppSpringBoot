@@ -16,12 +16,4 @@ import org.springframework.data.jpa.repository.Query;
 public interface RoleDao {
     @Query("select * from user")
     public List<User> getAll();
-    @Query("select t from User t where t.id = ?1")
-    public User getById(int id);
-    @Query("")
-    public boolean store(User user);
-    @Query("")
-    public boolean edit (int id,User user);
-    @Query("")
-    public boolean delete (int id);
 }

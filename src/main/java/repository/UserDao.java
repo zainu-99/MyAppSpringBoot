@@ -8,21 +8,15 @@ package repository;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import model.User;
+import model.User;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author as-sunnah
  */
-public interface UserDao extends CrudRepository<User, String>{
-    @Query("select * from user")
-    public List<User> getAll();
-    @Query("select t from User t where t.id = ?1")
-    public User getById(int id);
-    @Query("")
-    public boolean store(User user);
-    @Query("")
-    public boolean edit (int id,User user);
-    @Query("")
-    public boolean delete (int id);
+@Repository
+public interface UserDao extends CrudRepository<User, Long>{
+
 }

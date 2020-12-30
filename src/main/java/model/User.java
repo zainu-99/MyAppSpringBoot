@@ -4,21 +4,19 @@
  * and open the template in the editor.
  */
 package model;
-import java.util.Date;
+import java.time.LocalDateTime;
+import javax.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "users", schema = "myapp")
+@Entity @Table(name = "users", schema = "myapp")
 public class User {
     @Id
-    private int id;
+    private Long id;
     private String name;
     private String email;
     private String phone;
@@ -27,6 +25,6 @@ public class User {
     private String avatar;
     private String userid;
     private String password;
-    private Date created_at;
-    private Date updated_at;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
 }
