@@ -17,7 +17,7 @@ public class UserController {
     @GetMapping("/user")
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView("home");
-        mav.addObject("message", "Jaenudin");
+        mav.addObject("message", dao.findAll());
         return mav;
     }
 }
