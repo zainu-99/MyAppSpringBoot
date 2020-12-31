@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div th:fragment="page">
+    <div class="card-body">
+        <a class='btn btn-sm btn-primary text-light'>Create New</a>
+        <hr/>
+        <table class='table table-hover'>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>UserID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>190035</td>
+                    <td>Jaenudin</td>
+                    <td>-</td>
+                    <td>M</td>                        
+                    <td>-</td>
+                    <td><a href="">Edit</a> | <a href="">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

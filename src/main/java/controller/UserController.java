@@ -5,7 +5,6 @@
  */
 package controller;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import repository.UserDao;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class UserController {
     private UserDao dao;
     @RequestMapping(path = "/user",method = RequestMethod.GET)
     public String index(Model model) {
-        model.addAttribute("username", "Jaenudin");
+        model.addAttribute("fragment", "user/view::page");
         return "home";
     }
     @RequestMapping("/user/add")
