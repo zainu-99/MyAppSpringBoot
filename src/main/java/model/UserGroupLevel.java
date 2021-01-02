@@ -25,6 +25,4 @@ public class UserGroupLevel {
     private long id;
     private long user_id;
     private long grouplevel_id;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
 }

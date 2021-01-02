@@ -5,6 +5,7 @@
  */
 package model;
 import java.time.LocalDateTime;
+import javax.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,10 +22,21 @@ import javax.persistence.Table;
 public class Role {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private long id;;
+    private long id;;    
+    private String  name;
     private String controller;
     private String url;
     private String remark;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+    @Column(name = "HaveAccessView")
+    private boolean HaveAccessView;
+    @Column(name = "HaveAccessCreate")
+    private boolean HaveAccessCreate;
+    @Column(name = "HaveAccessEdit")
+    private boolean HaveAccessEdit;
+    @Column(name = "HaveAccessDelete")
+    private boolean HaveAccessDelete;
+    @Column(name = "HaveAccessPrint")
+    private boolean HaveAccessPrint;
+    @Column(name = "HaveAccessCustom")
+    private boolean HaveAccessCustom;
 }

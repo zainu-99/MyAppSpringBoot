@@ -5,6 +5,7 @@
  */
 package model;
 import java.time.LocalDateTime;
+import javax.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,6 +25,16 @@ public class UserRole {
     private long id;
     private long user_id;
     private long role_id;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+    @Column(name = "AllowView")
+    private boolean AllowView;
+    @Column(name = "AllowCreate")
+    private boolean AllowCreate;
+    @Column(name = "AllowEdit")
+    private boolean AllowEdit;
+    @Column(name = "AllowDelete")
+    private boolean AllowDelete;
+    @Column(name = "AllowPrint")
+    private boolean AllowPrint;
+    @Column(name = "AllowCustom")
+    private boolean AllowCustom;
 }

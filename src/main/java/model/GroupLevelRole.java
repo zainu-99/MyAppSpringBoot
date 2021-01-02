@@ -6,6 +6,7 @@
 package model;
 
 import java.time.LocalDateTime;
+import javax.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +26,16 @@ public class GroupLevelRole {
     private long id;
     private long grouplevel_id;
     private long role_id;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+    @Column(name = "EnableView")
+    private boolean EnableView;
+    @Column(name = "EnableCreate")
+    private boolean EnableCreate;
+    @Column(name = "EnableEdit")
+    private boolean EnableEdit;
+    @Column(name = "EnableDelete")
+    private boolean EnableDelete;
+    @Column(name = "EnablePrint")
+    private boolean EnablePrint;
+    @Column(name = "EnableCustom")
+    private boolean EnableCustom;
 }
