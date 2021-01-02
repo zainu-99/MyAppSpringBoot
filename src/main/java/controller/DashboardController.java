@@ -4,18 +4,14 @@
  * and open the template in the editor.
  */
 package controller;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.servlet.ModelAndView;
 @Controller
-public class DashboardController {
-    @RequestMapping(path="/", method= RequestMethod.GET)
-    public String index(Model model) {
-        model.addAttribute("fragment", "home::page");        
-        model.addAttribute("username", "Jaenudin");
-        return "_layout";
+public class DashboardController extends BaseController{
+    @Override
+    @RequestMapping(path="/")
+    public ModelAndView index() {
+        return modelandview;
     }
 }
