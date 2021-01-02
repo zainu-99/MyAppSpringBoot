@@ -20,7 +20,7 @@ public class UserController {
     @RequestMapping(path = "/user",method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("fragment", "user/view::page");
-        return "home";
+        return "_layout";
     }
     @RequestMapping("/user/add")
     public ModelAndView store(User user){

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DashboardController {
     @RequestMapping(path="/", method= RequestMethod.GET)
     public String index(Model model) {
-        model.addAttribute("fragment", "user/view::page");        
+        model.addAttribute("fragment", "home::page");        
         model.addAttribute("username", "Jaenudin");
-        return "home";
+        return "_layout";
     }
 }
