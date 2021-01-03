@@ -7,18 +7,19 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
  * @author as-sunnah
  */
 @Controller
-public class AuthController {
-    public String login(Model model){
-        return "login";
-    }
-    public String Logout(Model model){
-        return "logout";
+public class AuthController extends BaseController {
+   @Override
+    public ModelAndView index() {
+        ModelAndView modelandview = new ModelAndView("login");
+        return modelandview;
     }
     
 }

@@ -16,36 +16,8 @@ import repository.GroupLevelDao;
  *
  * @author as-sunnah
  */
-public class UserGroupLevelController {
+public class UserGroupLevelController extends BaseController {
     @Autowired
     private GroupLevelDao dao;
-    @GetMapping("/usergrouplevel")
-    public ModelAndView index() {
-        ModelAndView mav = new ModelAndView("home");
-        return mav;
-    }
-    @RequestMapping("/usergrouplevel/add")
-    public ModelAndView store(User user){
-       if(user != null) {
-           ModelAndView mav = new ModelAndView("add");
-           mav.addObject("model","model data");
-           return mav;
-       }
-       else{
-           return null;
-       }
-    }
-    @RequestMapping("/usergrouplevel/edit")
-    public ModelAndView edit(long id,User user){
-        if(user != null){
-            ModelAndView mav = new ModelAndView("edit");
-            return mav;
-        }else{
-            return null;
-        }
-    }
-    @RequestMapping("/usergrouplevel/delete")
-    public ModelAndView delete(long id){
-        return null;
-    }
+    
 }

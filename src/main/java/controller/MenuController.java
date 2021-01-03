@@ -16,36 +16,7 @@ import repository.MenuDao;
  *
  * @author as-sunnah
  */
-public class MenuController {
+public class MenuController extends BaseController {
     @Autowired
     private MenuDao dao;
-    @GetMapping("/menu")
-    public ModelAndView index() {
-        ModelAndView mav = new ModelAndView("home");
-        return mav;
-    }
-    @RequestMapping("/menu/add")
-    public ModelAndView store(User user){
-       if(user != null) {
-           ModelAndView mav = new ModelAndView("add");
-           mav.addObject("model","model data");
-           return mav;
-       }
-       else{
-           return null;
-       }
-    }
-    @RequestMapping("/menu/edit")
-    public ModelAndView edit(long id,User user){
-        if(user != null){
-            ModelAndView mav = new ModelAndView("edit");
-            return mav;
-        }else{
-            return null;
-        }
-    }
-    @RequestMapping("/menu/delete")
-    public ModelAndView delete(long id){
-        return null;
-    }
 }

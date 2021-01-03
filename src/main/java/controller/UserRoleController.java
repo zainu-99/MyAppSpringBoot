@@ -16,36 +16,8 @@ import repository.UserRoleDao;
  *
  * @author as-sunnah
  */
-public class UserRoleController {
+public class UserRoleController extends BaseController {
     @Autowired
     private UserRoleDao dao;
-    @GetMapping("/userrole")
-    public ModelAndView index() {
-        ModelAndView mav = new ModelAndView("home");
-        return mav;
-    }
-    @RequestMapping("/userrole/add")
-    public ModelAndView store(User user){
-       if(user != null) {
-           ModelAndView mav = new ModelAndView("add");
-           mav.addObject("model","model data");
-           return mav;
-       }
-       else{
-           return null;
-       }
-    }
-    @RequestMapping("/userrole/edit")
-    public ModelAndView edit(long id,User user){
-        if(user != null){
-            ModelAndView mav = new ModelAndView("edit");
-            return mav;
-        }else{
-            return null;
-        }
-    }
-    @RequestMapping("/userrole/delete")
-    public ModelAndView delete(long id){
-        return null;
-    }
+   
 }

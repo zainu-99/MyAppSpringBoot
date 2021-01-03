@@ -14,36 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class UserController {
+public class UserController extends BaseController {
     @Autowired
     private UserDao dao;
-    @RequestMapping(path = "/user",method = RequestMethod.GET)
-    public String index(Model model) {
-        model.addAttribute("fragment", "user/view::page");
-        return "_layout";
+
+    @Override
+    @RequestMapping(path = "/user")
+    public ModelAndView index() {
+        modelandview.addObject("fragment","user/view::page");
+        return modelandview;
     }
-    @RequestMapping("/user/add")
-    public ModelAndView store(User user){
-       if(user != null) {
-           ModelAndView mav = new ModelAndView("add");
-           mav.addObject("model","model data");
-           return mav;
-       }
-       else{
-           return null;
-       }
-    }
-    @RequestMapping("/user/edit")
-    public ModelAndView edit(long id,User user){
-        if(user != null){
-            ModelAndView mav = new ModelAndView("edit");
-            return mav;
-        }else{
-            return null;
-        }
-    }
-    @RequestMapping("/user/delete")
-    public ModelAndView delete(long id){
-        return null;
-    }
+    
 }

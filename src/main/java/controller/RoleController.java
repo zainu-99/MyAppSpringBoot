@@ -16,36 +16,8 @@ import repository.RoleDao;
  *
  * @author as-sunnah
  */
-public class RoleController {
+public class RoleController extends BaseController {
     @Autowired
     private RoleDao dao;
-    @GetMapping("/role")
-    public ModelAndView index() {
-        ModelAndView mav = new ModelAndView("home");
-        return mav;
-    }
-    @RequestMapping("/role/add")
-    public ModelAndView store(User user){
-       if(user != null) {
-           ModelAndView mav = new ModelAndView("add");
-           mav.addObject("model","model data");
-           return mav;
-       }
-       else{
-           return null;
-       }
-    }
-    @RequestMapping("/role/edit")
-    public ModelAndView edit(long id,User user){
-        if(user != null){
-            ModelAndView mav = new ModelAndView("edit");
-            return mav;
-        }else{
-            return null;
-        }
-    }
-    @RequestMapping("/role/delete")
-    public ModelAndView delete(long id){
-        return null;
-    }
+    
 }

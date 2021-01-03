@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public abstract class BaseController {
     public static String baseLayout="_layout";
     public ModelAndView modelandview = 
-            new ModelAndView(baseLayout).addObject("fragment", "user/view::page");
+            new ModelAndView(baseLayout).addObject("fragment", "jome::page");
     public ModelAndView index(){
         return modelandview;
     }

@@ -16,36 +16,7 @@ import repository.GroupDao;
  *
  * @author as-sunnah
  */
-public class GroupController {
+public class GroupController extends BaseController {
     @Autowired
     private GroupDao dao;
-    @GetMapping("/group")
-    public ModelAndView index() {
-        ModelAndView mav = new ModelAndView("home");
-        return mav;
-    }
-    @RequestMapping("/group/add")
-    public ModelAndView store(User user){
-       if(user != null) {
-           ModelAndView mav = new ModelAndView("add");
-           mav.addObject("model","model data");
-           return mav;
-       }
-       else{
-           return null;
-       }
-    }
-    @RequestMapping("/group/edit")
-    public ModelAndView edit(long id,User user){
-        if(user != null){
-            ModelAndView mav = new ModelAndView("edit");
-            return mav;
-        }else{
-            return null;
-        }
-    }
-    @RequestMapping("/group/delete")
-    public ModelAndView delete(long id){
-        return null;
-    }
 }
