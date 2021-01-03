@@ -17,4 +17,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao extends CrudRepository<User, Long>{
     public List<User> findAll();
+    public User findByUserid(String userid);
 }
